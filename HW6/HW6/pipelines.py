@@ -26,3 +26,11 @@ class PhotosPipeline(ImagesPipeline):
             return image_filename
         except Exception as e:
             print(e)
+
+    def item_completed(self, results, item, info):
+        print()
+        if results:
+            if results[0][0]:
+                item['photo'] = results[0][1]['path']
+
+        return item

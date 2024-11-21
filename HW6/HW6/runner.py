@@ -15,7 +15,14 @@ settings.update({
     'ITEM_PIPELINES': {
         'pipelines.PhotosPipeline': 300,
     },
-    'IMAGES_STORE': 'images'
+    'IMAGES_STORE': 'images',
+    'FEEDS': {
+        'unsplash.csv': {
+            'format': 'csv',
+            'encoding': 'utf-8'
+        }
+    },
+    'LOG_LEVEL': 'WARN'
 })
 
 process = CrawlerProcess(settings=settings)
